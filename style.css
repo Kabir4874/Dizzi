@@ -1,0 +1,518 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+:root{
+    --blue-color:rgb(0, 66, 255);
+    --green-color:#00d089;
+    --black-color: #000;
+    --dark-gray: #333333;
+    --white-color: #fff;
+    --h1-font: 65px;
+    --h2-font: 46px;
+    --h4-font: 24px;
+    --h5-font:20px;
+    --p-font: 14px;
+    --btn-font: 14px;
+    --small-font: 15px;
+    --p-font-color: #848484;
+}
+html{
+    font-size: 62.5%;
+}
+
+/* =======================================
+Reusable Code Start
+======================================= */
+.section{
+    padding: 8rem 18% 0;
+}
+.btn{
+    padding: 2rem 4rem;
+    border-radius: 50px;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    transition: .4s linear;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: var(--blue-color);
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+    align-items: center;
+    gap: 4rem;
+}
+.green-title{
+    font-size: var(--h5-font);
+    font-weight: 200;
+    color: var(--green-color);
+}
+.black-title{
+    font-size: var(--h2-font);
+    color: var(--black-color);
+}
+/* =======================================
+Header Start
+======================================= */
+header{
+    width: 100%;
+    background:linear-gradient(rgba(0, 66, 255, 0.7)50%,rgba(0, 66, 255, 0.7)50%), url(img/banner_img.png.webp);
+    background-position: center;
+    background-size: cover;
+    padding: 0 0 16rem 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 18%;
+    position: sticky;
+}
+.logo{
+    cursor: pointer;
+}
+.navlist{
+    display: flex;
+    gap: 5rem;
+}
+.navlist li{
+    position: relative;
+}
+.navlist li a{
+    color: var(--white-color);
+    font-size: var(--small-font);
+    text-transform: capitalize;
+}
+.navlist li::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--green-color);
+    transition: .3s linear;
+}
+.navlist li:hover::after{
+    width: 100%;
+}
+.navIcons i{
+    font-size: 1.8rem;
+    color: var(--white-color);
+    margin-left: 2rem;
+    cursor: pointer;
+}
+.header-text{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 10rem;
+}
+.header-text h5{
+    font-size: var(--h5-font);
+    color: var(--white-color);
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+.header-text h1{
+    font-size: var(--h1-font);
+    color: var(--white-color);
+    line-height: 75px;
+    margin-bottom: 4rem;
+}
+/* =======================================
+Company Start
+======================================= */
+.company{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 4rem;
+    padding: 4rem 18%;
+    background-color: #f8faff;
+    flex-wrap: wrap;
+}
+#menu-icon{
+    font-size: 4rem;
+    color: var(--white-color);
+    display: none;
+}
+/* =======================================
+About Start
+======================================= */
+.about-text h5{
+    font-size: var(--h5-font);
+    font-weight: 200;
+    color: var(--green-color);
+    margin-bottom: 2rem;
+}
+.about-text h2{
+    font-size: var(--h2-font);
+    color: var(--black-color);
+    margin-bottom: 2rem;
+}
+.about-text p{
+    font-size: var(--p-font);
+    color: var(--p-font-color);
+    margin-bottom: 4rem;
+}
+.about-img img{
+    width: 100%;
+}
+/* =======================================
+Service Start
+======================================= */
+.service-box{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 6rem 4rem;
+    transition: .4s ease;
+}
+.service-box span{
+    font-size: 1.6rem;
+    display: inline-block;
+    color: var(--green-color);
+    margin-bottom: 2rem;
+}
+.service-box h4{
+    font-size: var(--h4-font);
+    color: var(--black-color);
+    margin-bottom: 2rem;
+}
+.service-box p{
+    font-size: var(--small-font);
+    color: var(--p-font-color);
+    margin-bottom: 2rem;
+}
+.service-box ul li{
+    margin-bottom: 1rem;
+}
+.service-box ul li a{
+    font-size: var(--p-font);
+    color: var(--black-color);
+}
+.s-box2{
+    margin-top: 8rem;
+}
+.s-box3{
+    margin-top: 16rem;
+}
+.service-box:hover{
+    background-color: var(--blue-color);
+}
+.service-box:hover > h4 {
+    color: var(--white-color);
+}
+.service-box:hover > p{
+    color: var(--white-color);
+}
+.service-box:hover> .service-links a{
+    color: var(--white-color);
+}
+/* =======================================
+Projects Start
+======================================= */
+.title{
+    margin-bottom: 6rem;
+}
+.title ul{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+}
+.title ul li a{
+    font-size: var(--small-font);
+    color: rgba(0, 0, 0, 0.5);
+    transition: .4s linear;
+}
+.title ul li a:hover{
+    color: var(--green-color);
+}
+.project-btn{
+    background-color: transparent;
+    color: var(--green-color);
+    border: 1px solid var(--green-color);
+}
+.project-btn:hover{
+    color: var(--white-color);
+    background-color: var(--green-color);
+}
+.project-box{
+    position: relative;
+}
+.project-box img{
+    width: 100%;
+}
+.project-box .project-small-box{
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white-color);
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem 4rem;
+    opacity: 0;
+    transition: .4s linear;
+}
+.project-small-box p{
+    font-size: var(--small-font);
+    color: var(--p-font-color);
+    margin-bottom: 1rem;
+}
+.project-small-box h2{
+    font-size: 2rem;
+    font-weight: 400;
+}
+.project-box:hover > .project-small-box{
+    opacity: 1;
+}
+/* =======================================
+Work Start
+======================================= */
+.secton-work{
+    padding: 12rem 18% 0;
+}
+.work-img img{
+    width: 100%;
+}
+.work-text h2{
+    font-size: var(--h2-font);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.work-text p{
+    font-size: var(--p-font);
+    color: var(--p-font-color);
+    margin-bottom: 1rem;
+}
+.work-text span{
+    display: inline-block;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+}
+.work-btn{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.work-btn a{
+    font-size: 1.8rem;
+    color: var(--black-color);
+}
+.work-btn i{
+    font-size: 8rem;
+    color: var(--blue-color);
+    cursor: pointer;
+}
+/* =======================================
+Testimonial Start
+======================================= */
+.testimonial-title{
+    text-align: center;
+}
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 4rem 4rem;
+    margin: 6rem 0;
+  }
+  .slider-top{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  .slider-top img{
+    flex-basis: 15%;
+  }
+  .client-info h4{
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  .client-info p{
+    font-size: var(--p-font);
+    color: var(--p-font-color);
+  }
+  .slider-bottom p{
+    font-size: var(--p-font);
+    color: var(--p-font-color);
+  }
+/* =======================================
+Call To Action Start
+======================================= */
+.section-cta{
+    margin-top: 8rem;
+    width: 100%;
+    background: linear-gradient(rgba(0, 66, 255,.9)50%,rgba(0, 66, 255,.9)50% ), url(img/cta_bg.png.webp);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    padding: 16rem 0;
+    text-align: center;
+}
+.section-cta h2{
+    font-size: 5.2rem;
+    color: var(--white-color);
+    font-weight: 500;
+    margin-bottom: 4rem;
+}
+
+/* =======================================
+Footer Start
+======================================= */
+.f-container{
+    align-items: first baseline;
+}
+.f-container ul{
+    margin-top: 2rem;
+}
+.f-container ul li{
+    margin: 1rem 0;
+    font-size: 1.6rem;
+}
+.f-container ul li a{
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.5);
+    transition: .4s linear;
+}
+.f-container ul li a:hover{
+    color: var(--green-color);
+}
+.f-container h4{
+    font-size: var(--h4-font);
+}
+.address h3{
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+.address p{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+.f-icons i{
+    font-size: 2.5rem;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+.copyright{
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+/* =======================================
+Responsive Start
+======================================= */
+@media(max-width:1200px){
+    nav{
+        padding: 4rem 8%;
+    }
+}
+@media(max-width:1000px){
+    nav{
+        padding: 4rem 4%;
+    }
+}
+@media(max-width:900px){
+    .navIcons{
+        display: none;
+    }
+}
+@media(max-width:770px){
+    header{
+        overflow: hidden;
+    }
+    #menu-icon{
+        display: block;
+        z-index: 999;
+    }
+    .navlist{
+        display: inline-block;
+        position: absolute;
+        background: var(--white-color);
+        height: 80vh;
+        right: -50%;
+        top: 10rem;
+        width: 14rem;
+        padding: 4rem 3rem;
+        transition: .5s linear;
+    }
+    .navlist li{
+        margin-bottom: 2rem;
+    }
+    .navlist li a{
+        color: var(--blue-color);
+    }
+    .header-text h5{
+        font-size: 1.6rem;
+    }
+    .header-text h1{
+        line-height: 4rem;
+    }
+    .header-text{
+        text-align: center;
+    }
+    :root{
+        --h1-font: 36px;
+    --h2-font: 26px;
+    --h4-font: 20px;
+    }
+    .about-text{
+        order: 1;
+    }
+    .service-box{
+        margin-top: 0;
+    }
+    .section{
+        padding: 8rem 5%;
+    }
+    .project-btn{
+        display: none;
+    }
+    .cta h2{
+        font-size: 2rem;
+    }
+}
+@media(max-width:600px){
+    .work-img{
+        order: 1;
+    }
+    .work-text span{
+        font-size: 1.6rem;
+    }
+}
+@media(max-width:400px){
+    :root{
+        --h1-font: 26px;
+    --h2-font: 20px;
+    --h4-font: 18px;
+    }
+    .header-text h5{
+        font-size: 1.4rem;
+    }
+    .about-text{
+        text-align: center;
+    }
+    .btn{
+        padding: 1.5rem 3rem;
+        font-size: 1.4rem;
+    }
+    footer{
+        text-align: center;
+    }
+    .section-cta h2{
+        padding: 0 1rem;
+        font-size: 2.4rem;
+    }
+}
